@@ -18,9 +18,9 @@ Conflicts:	pwsafe
 %{?el7:BuildRequires: epel-release}
 BuildRequires:	make, cmake, gcc-c++, zip, gettext, desktop-file-utils, perl
 BuildRequires:	qrencode-devel, openssl-devel, libcurl-devel, file-devel, libuuid-devel
-BuildRequires:	libXt-devel, libXtst-devel, wxGTK3-devel
-BuildRequires:	libyubikey-devel, ykpers-devel, xerces-c-devel
-%{?el7:Requires: epel-release, wxBase3, wxGTK3, xerces-c, ykpers}
+#BuildRequires:	libXt-devel, libXtst-devel, wxGTK3-devel
+#BuildRequires:	libyubikey-devel, ykpers-devel, xerces-c-devel
+%{?el7:#Requires: epel-release, wxBase3, wxGTK3, xerces-c, ykpers}
 
 # Errors:
 
@@ -54,6 +54,10 @@ all the user name / password combinations that you use.
 
 %setup -q -n pwsafe-%{pwsafe_release}
 mv install/desktop/fedora-pwsafe.desktop install/desktop/passwordsafe.desktop
+
+ls -l /etc/yum.repos.d/
+grep '' /etc/yum.repos.d/*
+# Jonny Was here
 
 %build
 
